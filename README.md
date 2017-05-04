@@ -1,4 +1,5 @@
 Empresa PetroPack
 =======================================================================
 Author     : Omar Sosa
-Plataforma : Magento 1.9 
+Plataforma : Magento 1.9
+Ambiente   : Dev
