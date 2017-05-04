@@ -44,3 +44,9 @@ app/etc/local.xml
 !/var/package
 /var/package/*
 !/var/package/*.xml
+
+#-----------------------------------------#
+# Archivos configurable para debuguear    #
+#-----------------------------------------#
+
+/lib/Varien/Db/Adapter/Pdo\Mysql.php
