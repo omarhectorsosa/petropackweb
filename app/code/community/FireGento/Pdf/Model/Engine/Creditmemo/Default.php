@@ -135,7 +135,7 @@ class FireGento_Pdf_Model_Engine_Creditmemo_Default extends FireGento_Pdf_Model_
             $this->encoding
         );
         $page->drawText(
-            Mage::helper('firegento_pdf')->__('No.'),
+            Mage::helper('firegento_pdf')->__('Cod.'),
             $this->margin['left'] + 25,
             $this->y,
             $this->encoding

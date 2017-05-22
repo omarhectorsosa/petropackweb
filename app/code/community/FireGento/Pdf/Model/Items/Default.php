@@ -166,7 +166,7 @@ class FireGento_Pdf_Model_Items_Default extends Mage_Sales_Model_Order_Pdf_Items
         if (Mage::getStoreConfig('sales_pdf/invoice/show_item_discount') && 0 < $item->getDiscountAmount()) {
             // print discount
             $text = Mage::helper('firegento_pdf')->__(
-                'You get a discount of %s.',
+                'Tu descuento es de %s.',
                 $order->formatPriceTxt($item->getDiscountAmount())
             );
             $lines[][] = array(

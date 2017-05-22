@@ -131,7 +131,7 @@ class FireGento_Pdf_Model_Engine_Invoice_Default extends FireGento_Pdf_Model_Eng
         $this->y -= 11;
         $page->drawText(Mage::helper('firegento_pdf')->__('Pos'), $this->margin['left'] + 3, $this->y, $this->encoding);
         $page->drawText(
-            Mage::helper('firegento_pdf')->__('No.'), $this->margin['left'] + 25, $this->y, $this->encoding
+            Mage::helper('firegento_pdf')->__('Cod.'), $this->margin['left'] + 25, $this->y, $this->encoding
         );
         $page->drawText(
             Mage::helper('firegento_pdf')->__('Description'), $this->margin['left'] + 130, $this->y, $this->encoding

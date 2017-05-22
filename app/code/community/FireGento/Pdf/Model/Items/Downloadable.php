@@ -193,7 +193,7 @@ class FireGento_Pdf_Model_Items_Downloadable
         ) {
             // print discount
             $text = Mage::helper('firegento_pdf')->__(
-                'You get a discount of %s.',
+                'Tu descuento es de %s.',
                 $order->formatPriceTxt($item->getDiscountAmount())
             );
             $lines[][] = array(

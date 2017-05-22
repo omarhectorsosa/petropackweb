@@ -500,7 +500,7 @@ abstract class FireGento_Pdf_Model_Engine_Abstract
 
         // Invoice/shipment/creditmemo Number
         if ($mode == 'invoice') {
-            $numberTitle = 'Invoice number:';
+            $numberTitle = 'Número de factura:';
         } elseif ($mode == 'shipment') {
             $numberTitle = 'Shipment number:';
         } else {
@@ -585,7 +585,7 @@ abstract class FireGento_Pdf_Model_Engine_Abstract
             $order->getStoreId())
         ) {
             $page->drawText(
-                Mage::helper('firegento_pdf')->__('Customer IP:'),
+                Mage::helper('firegento_pdf')->__('IP Cliente:'),
                 ($this->margin['right'] - $labelRightOffset),
                 $this->y, $this->encoding
             );
@@ -603,7 +603,7 @@ abstract class FireGento_Pdf_Model_Engine_Abstract
 
         $page->drawText(
             Mage::helper('firegento_pdf')->__(($mode == 'invoice')
-                ? 'Invoice date:' : 'Date:'),
+                ? 'Fecha de Factura:' : 'Fecha:'),
             ($this->margin['right'] - $labelRightOffset), $this->y,
             $this->encoding
         );
