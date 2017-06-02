@@ -50,27 +50,36 @@ class FireGento_Pdf_Model_Items_Default extends Mage_Sales_Model_Order_Pdf_Items
 
         $fontSize = 9;
 
+        //ISSUE : POSICION CAMPO
         // draw Position Number
         $lines[0] = array(
             array(
-                'text'      => $position,
-                'feed'      => $pdf->margin['left'] + 10,
+                'text'      => "",
+                'feed'      => $pdf->margin['left'] + 0,
                 'align'     => 'right',
                 'font_size' => $fontSize
             )
         );
 
+        //ISSUE : POSICION CAMPO
         // draw SKU
         $lines[0][] = array(
             'text' => Mage::helper('core/string')->str_split($this->getSku($item), 19),
-            'feed' => $pdf->margin['left'] + 25,
+            'feed' => $pdf->margin['left'] + 5,
+            'font_size' => $fontSize
+        );
+
+        //ISSUE : POSICION CAMPO
+        $lines[0][] = array(
+           'text'      => $item->getQty() * 1,
+            'feed' => $pdf->margin['left'] + 50,
             'font_size' => $fontSize
         );
 
         // draw Product name
         $lines[0][] = array(
             'text' => Mage::helper('core/string')->str_split($item->getName(), 40, true, true),
-            'feed' => $pdf->margin['left'] + 130,
+            'feed' => $pdf->margin['left'] + 100,
             'font_size' => $fontSize
         );
 
@@ -92,19 +101,19 @@ class FireGento_Pdf_Model_Items_Default extends Mage_Sales_Model_Order_Pdf_Items
 
         $columns = array();
         // prepare qty
-        $columns['qty'] = array(
+        /*$columns['qty'] = array(
             'text'      => $item->getQty() * 1,
             'align'     => 'right',
             'font_size' => $fontSize,
             '_width' => 30
-        );
+        );*/
 
         // prepare price
         $columns['price'] = array(
-            'text'      => $order->formatPriceTxt($item->getPrice()),
+            'text'      => str_replace('AR$','$',$order->formatPriceTxt($item->getPrice())),
             'align'     => 'right',
             'font_size' => $fontSize,
-            '_width'    => 60
+            '_width'    => 100
         );
 
         // prepare price_incl_tax
@@ -125,7 +134,7 @@ class FireGento_Pdf_Model_Items_Default extends Mage_Sales_Model_Order_Pdf_Items
 
         // prepare tax_rate
         $columns['tax_rate'] = array(
-            'text'      => round($item->getOrderItem()->getTaxPercent(), 2) . '%',
+            'text'      => str_replace('AR$','$',round($item->getOrderItem()->getTaxPercent(), 2) . '%'),
             'align'     => 'right',
             'font_size' => $fontSize,
             '_width'    => 50
@@ -133,15 +142,15 @@ class FireGento_Pdf_Model_Items_Default extends Mage_Sales_Model_Order_Pdf_Items
 
         // prepare subtotal
         $columns['subtotal'] = array(
-            'text'      => $order->formatPriceTxt($item->getRowTotal()),
+            'text'      => str_replace('AR$','$',$order->formatPriceTxt($item->getRowTotal())),
             'align'     => 'right',
             'font_size' => $fontSize,
-            '_width'    => 50
+            '_width'    => 100
         );
 
         // prepare subtotal_incl_tax
         $columns['subtotal_incl_tax'] = array(
-            'text'      => $order->formatPriceTxt($item->getRowTotalInclTax()),
+            'text'      => str_replace('AR$','$',$order->formatPriceTxt($item->getRowTotalInclTax())),
             'align'     => 'right',
             'font_size' => $fontSize,
             '_width'    => 70

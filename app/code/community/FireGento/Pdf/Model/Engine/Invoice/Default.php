@@ -129,27 +129,44 @@ class FireGento_Pdf_Model_Engine_Invoice_Default extends FireGento_Pdf_Model_Eng
         $font = $this->_setFontRegular($page, 9);
 
         $this->y -= 11;
-        $page->drawText(Mage::helper('firegento_pdf')->__('Pos'), $this->margin['left'] + 3, $this->y, $this->encoding);
+
+        //ISSUE : POSICION CAMPO
+        //$page->drawText(Mage::helper('firegento_pdf')->__('Pos'), $this->margin['left'] + 3, $this->y, $this->encoding);
+
         $page->drawText(
-            Mage::helper('firegento_pdf')->__('Cod.'), $this->margin['left'] + 25, $this->y, $this->encoding
+            Mage::helper('firegento_pdf')->__('Cod.'), $this->margin['left'] + 5, $this->y, $this->encoding
         );
+
+        //ISSUE : POSICION CAMPO
         $page->drawText(
-            Mage::helper('firegento_pdf')->__('Description'), $this->margin['left'] + 130, $this->y, $this->encoding
+            Mage::helper('firegento_pdf')->__('Cantidad.'),
+            $this->margin['left'] + 50,
+            $this->y,
+            $this->encoding
+        );
+
+
+        //ISSUE : POSICION CAMPO
+        $page->drawText(
+            Mage::helper('firegento_pdf')->__('Description'),
+            $this->margin['left'] + 100,
+            $this->y,
+            $this->encoding
         );
 
         $columns = array();
         $columns['price'] = array(
             'label'  => Mage::helper('firegento_pdf')->__('Price'),
-            '_width' => 60
+            '_width' => 100
         );
         $columns['price_incl_tax'] = array(
             'label'  => Mage::helper('firegento_pdf')->__('Price (incl. tax)'),
             '_width' => 60
         );
-        $columns['qty'] = array(
+        /*$columns['qty'] = array(
             'label'  => Mage::helper('firegento_pdf')->__('Qty'),
             '_width' => 40
-        );
+        );*/
         $columns['tax'] = array(
             'label'  => Mage::helper('firegento_pdf')->__('Tax'),
             '_width' => 50
@@ -160,7 +177,7 @@ class FireGento_Pdf_Model_Engine_Invoice_Default extends FireGento_Pdf_Model_Eng
         );
         $columns['subtotal'] = array(
             'label'  => Mage::helper('firegento_pdf')->__('Total'),
-            '_width' => 50
+            '_width' => 100
         );
         $columns['subtotal_incl_tax'] = array(
             'label'  => Mage::helper('firegento_pdf')->__('Total (incl. tax)'),
