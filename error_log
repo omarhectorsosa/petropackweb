@@ -1,0 +1,2 @@
+[02-Jun-2017 14:08:35 UTC] PHP Parse error:  syntax error, unexpected '9' (T_LNUMBER) in /home/petropack/public_html/petropack_prod/app/code/community/FireGento/Pdf/Model/Items/Default.php on line 179
+[02-Jun-2017 14:09:12 UTC] PHP Parse error:  syntax error, unexpected '9' (T_LNUMBER) in /home/petropack/public_html/petropack_prod/app/code/community/FireGento/Pdf/Model/Items/Default.php on line 179

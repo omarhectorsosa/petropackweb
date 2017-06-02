@@ -478,7 +478,7 @@ abstract class FireGento_Pdf_Model_Engine_Abstract
         $this->_setFontBold($page, 15);
 
         if ($mode == 'invoice') {
-            $title = 'Invoice';
+            $title = 'Recibo';
         } elseif ($mode == 'shipment') {
             $title = 'Shipment';
         } else {
